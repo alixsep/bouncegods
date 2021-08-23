@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && cd build && mkdir bouncegods && mv static/ bouncegods/",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"

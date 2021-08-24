@@ -1,0 +1,106 @@
+@import '../scss/gloabals.scss';
+
+.three,
+.about,
+.owners {
+  width: 100%;
+}
+
+.three {
+  height: 100vh;
+  background-color: $c_light;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  text-align: center;
+}
+
+$about_width: 360px;
+$about_hight: 48px;
+$about_image_size: 256px;
+.about {
+  background-color: $c_dark;
+  color: $c_light;
+  position: relative;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .after,
+  .before {
+    width: $about_width;
+    height: $about_hight;
+    background-color: $c_dark;
+    color: $c_light;
+    position: absolute;
+    left: calc(50% - #{$about_width} / 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .before {
+    top: -1 * $about_hight;
+    clip-path: polygon($about_hight 0%, #{$about_width - $about_hight} 0%, 100% 100%, 0% 100%);
+  }
+  .after {
+    bottom: -1 * $about_hight;
+    clip-path: polygon(0% 0%, 100% 0%, #{$about_width - $about_hight} 100%, $about_hight 100%);
+  }
+  .group {
+    height: $about_image_size;
+    max-width: 4 * $about_image_size;
+    display: flex;
+    @media (max-aspect-ratio: 1/1) and (max-width: 2.5 * $about_image_size) {
+      flex-direction: column;
+      width: $about_image_size;
+      height: initial;
+    }
+    &.left-to-right {
+      margin-bottom: 4rem;
+    }
+    &.right-to-left {
+      flex-direction: row-reverse;
+      @media (max-aspect-ratio: 1/1) and (max-width: 2.5 * $about_image_size) {
+        flex-direction: column;
+      }
+    }
+    .image {
+      width: $about_image_size;
+      height: $about_image_size;
+      flex-shrink: 0;
+    }
+    .text {
+      padding: 2rem;
+      .topic {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+.owners {
+  padding: 4rem 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  & > * + * {
+    margin-left: 2rem;
+  }
+  
+}
+
+.footer {
+  width: 100%;
+  min-height: 60vh;
+  background-color: $c_dark;
+}
+
+// Temporary
+
+.image {
+  background-image: repeating-linear-gradient(-45deg, currentColor 0, currentColor 4px, transparent 0, transparent 50%);
+  background-size: 16px 16px;
+}

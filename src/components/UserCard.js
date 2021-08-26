@@ -8,7 +8,7 @@ const UserCard = ({ name, about }) => {
       {/* <img className='image' src='' alt=' ' /> */}
       <div className='image' />
       <div className='description'>
-          <div className="name">{name}</div>
+          <div className="name topic">{name}</div>
           <div className="about">{about}</div>
       </div>
     </div>

@@ -1,5 +1,4 @@
 import React from 'react';
-import Particles from 'react-particles-js';
 
 import './home.scss';
 
@@ -10,34 +9,6 @@ const Home = () => {
     <div className='app-route'>
       <div className='logo'>
         <div className='overlay'>Bouncegods</div>
-        <Particles
-          width='100vw'
-          height='100vh'
-          params={{
-            particles: {
-              number: { value: 200, density: { enable: true, value_area: 3000 } },
-              color: { value: '#FFFFFF' },
-              shape: {
-                type: 'polygon',
-                stroke: { width: 0, color: '#000000' },
-                polygon: { nb_sides: 5 },
-              },
-              opacity: { value: 0.5, random: true, anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false } },
-              size: { value: 4, random: true, anim: { enable: true, speed: 5, size_min: 0, sync: false } },
-              line_linked: { enable: false },
-              move: {
-                enable: true,
-                speed: 1,
-                direction: 'top',
-                random: true,
-                straight: false,
-                out_mode: 'out',
-                bounce: false,
-                attract: { enable: true, rotateX: 600, rotateY: 1200 },
-              },
-            },
-          }}
-        />
       </div>
       <div className='about'>
         <div className='before'>Welcome to Bouncegods</div>
@@ -67,20 +38,21 @@ const Home = () => {
         <div className='after'>Owners</div>
       </div>
       <div className='owners'>
-        <UserCard name={'Producer Name'} about={'Producer about and description. Some sample text...'} />
-        <UserCard name={'Producer Name'} about={'Producer about and description. Some sample text...'} />
-        <UserCard name={'Producer Name'} about={'Producer about and description. Some sample text...'} />
-        <UserCard name={'Producer Name'} about={'Producer about and description. Some sample text...'} />
+        <UserCard name={'Prod. Sacred'} about={'Producer about and description. Some sample text...'} />
+        <UserCard name={'Prod. Bvng'} about={'Producer about and description. Some sample text...'} />
       </div>
       <div className='footer'>
         <div className='group left'>
-          <div className='topic'>Topic A</div>
-          <a href='/'>Link 1</a>
-          <a href='/'>Link 2</a>
-          <a href='/'>Link 3</a>
+          <div className='topic'>Contact us</div>
+          <a className="link" href='/'>Link 1</a>
+          <a className="link" href='/'>Link 2</a>
+          <a className="link" href='/'>Link 3</a>
         </div>
         <div className='group middle'>
-          <div className='topic'>Topic A</div>
+          <div className='topic'>Topic B</div>
+          <a className="link" href='/'>Link 4</a>
+          <a className="link" href='/'>Link 5</a>
+          <a className="link" href='/'>Link 6</a>
         </div>
         <div className='group right'>
           <div className='topic'>Topic A</div>

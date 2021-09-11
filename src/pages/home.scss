@@ -1,9 +1,21 @@
 @import '../scss/gloabals.scss';
 
+a {
+  &:hover,
+  &:visited,
+  &:link,
+  &:active,
+  &:focus {
+    color: $c_light;
+    text-decoration: none;
+  }
+}
+
 .logo,
 .about,
 .owners,
-.footer {
+.footer,
+.copyright {
   width: 100%;
 }
 
@@ -14,26 +26,37 @@
 
 .logo {
   height: 100vh;
-  // background: radial-gradient(circle, rgb(255, 192, 243) 0%, rgb(160, 212, 255) 100%);
-  // background-size: 100% 200%;
+  background-color: $c_dark;
   position: relative;
   .overlay {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    vertical-align: middle;
-    text-align: center;
-    font-family: '13Misa';
-    font-feature-settings: 'kern' 1;
-    letter-spacing: -6px;
-    font-size: 14vmin;
+    align-items: center;
+    z-index: 1;
+    .bouncegods-logo {
+      max-width: 80vh;
+      fill: $c_light;
+    }
   }
+  .background {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+.homepage-scene {
+  height: 101%;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 $about_width: 360px;
@@ -75,6 +98,7 @@ $about_image_size: 256px;
       flex-direction: column;
       width: $about_image_size;
       height: initial;
+      text-align: center;
     }
     &.left-to-right {
       margin-bottom: 4rem;
@@ -102,39 +126,153 @@ $about_image_size: 256px;
   flex-wrap: wrap;
   justify-content: center;
   & > * + * {
-    margin-left: 2rem;
+    margin: 0 0 0 2rem;
+    @media (max-aspect-ratio: 1/1) and (max-width: 2.5 * $about_image_size) {
+      margin: 0 0 0 0;
+    }
   }
 }
 
+$c_discord_inv: $c_card;
 .footer {
-  background-color: $c_dark;
+  background-color: $c_footer;
   color: $c_light;
   padding: 4rem 2rem;
   display: flex;
+  @media (max-aspect-ratio: 1/1) and (max-width: 2.5 * $about_image_size) {
+    flex-direction: column;
+  }
   .group {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    &.middle {
-      margin: 0 4rem;
+    .link {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 0;
+      &:hover {
+        color: rgb(231, 213, 252);
+      }
     }
-  }
-  .link {
-    padding: 8px 0;
-    &:hover,
-    &:visited,
-    &:link,
-    &:active,
-    &:focus {
-      color: $c_light;
-      text-decoration: none;
+    .icon {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 1rem;
+      width: 1.25rem;
+    }
+    $cut_pixel: 6px;
+    &.left {
+      direction: rtl;
+    }
+    &.left,
+    &.right {
+      flex-grow: 1;
+    }
+    &.middle {
+      flex-grow: 0.2;
+      margin: 0 4rem;
+      @media (max-aspect-ratio: 1/1) and (max-width: 2.5 * $about_image_size) {
+        margin: 4rem 0;
+      }
+      max-width: 512px;
+      background-color: $c_discord_inv;
+      clip-path: polygon(0% 16px, 16px 0%, 100% 0%, 100% 100%, 0% 100%);
+      display: flex;
+      flex-direction: column;
+      .pic {
+        min-height: 3rem;
+        flex-grow: 1;
+        background: url('../images/dreamy-sky.jpg');
+        background-size: cover;
+        background-position: center;
+        clip-path: polygon(0% #{16px - $cut_pixel / 1.5}, #{16px - $cut_pixel / 1.5} 0%, 100% 0%, 100% 100%, 0% 100%);
+        margin: $cut_pixel;
+      }
+      .description-wrapper {
+        margin: 0 $cut_pixel $cut_pixel;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        .discord {
+          width: 4rem;
+          height: 4rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .discord-logo {
+          width: 3rem;
+          fill: $c_light;
+        }
+        .text {
+          flex: 1 1;
+          margin: 0 0 0 $cut_pixel;
+          text-align: center;
+          // background-color: $c_dark;
+          min-height: 2rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .members {
+          margin: 0 0 0 $cut_pixel;
+          position: relative;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          .member {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            border: 3px solid $c_discord_inv;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .discord-logo {
+              width: 75%;
+            }
+            &.a {
+              margin-right: -1.5rem;
+              background-color: #b887a0;
+            }
+            &.b {
+              margin-right: -1.5rem;
+              background-color: #866d8f;
+            }
+            &.c {
+              background-color: #726785;
+            }
+          }
+        }
+      }
     }
   }
 }
 
-// Temporary
+.copyright {
+  background-color: $c_footer;
+  color: $c_light;
+  text-align: center;
+  padding: 0rem 1rem 4rem;
+  line-height: 2;
+  .alixsep-logo {
+    width: 100px;
+    margin: 0 auto;
+    fill: $c_light;
+  }
+}
 
 .image {
-  background-image: repeating-linear-gradient(-45deg, currentColor 0, currentColor 4px, transparent 0, transparent 50%);
+  background-image: repeating-linear-gradient(-45deg, $c_light 0, $c_light 4px, transparent 0, transparent 50%);
   background-size: 16px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg {
+    width: 80%;
+    fill: $c_light;
+    stroke: $c_dark;
+    stroke-width: 8;
+  }
 }

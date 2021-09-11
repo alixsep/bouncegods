@@ -1,2 +1,14 @@
 $c_light: whitesmoke;
-$c_dark: rgb(53, 51, 56);
+$c_dark: #180731;
+$c_footer: #423a42;
+$c_card: #2e1f31;
+
+.scrollbar-track {
+  background-color: transparent !important;
+  margin: 0 4px !important;
+  width: 8px !important;
+}
+.scrollbar-thumb {
+  background-color: #0000007f !important;
+  width: 100% !important;
+}

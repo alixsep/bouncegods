@@ -9,10 +9,16 @@
 body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 #app {
-  max-width: 100vw;
+  max-width: 250vh;
   overflow: hidden;
+  margin: 0 auto;
+}
+
+.app-route {
+  height: 100vh;
+
 }

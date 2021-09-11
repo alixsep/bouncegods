@@ -4,8 +4,8 @@ $about_width: 256px;
 $about_image_size: 256px;
 .user-card {
   width: $about_width;
-  height: 2 * $about_width;
-  background-color: $c_dark;
+  // height: 2 * $about_width;
+  background-color: $c_card;
   color: $c_light;
   display: flex;
   flex-direction: column;
@@ -22,7 +22,7 @@ $about_image_size: 256px;
       text-align: center;
       margin-bottom: 2rem;
     }
-    .about {
+    .about-text {
       padding: 0;
       text-align: justify;
     }

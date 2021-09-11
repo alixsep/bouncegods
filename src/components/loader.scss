@@ -1,0 +1,37 @@
+@import '../scss/gloabals.scss';
+
+.loader {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $c_dark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $c_light;
+  z-index: 2;
+  animation: FadeIn;
+  animation-duration: 0.95s;
+  animation-delay: 50ms;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation-fill-mode: forwards;
+  opacity: 0;
+  .b-logo {
+    width: 6rem;
+    fill: $c_light;
+  }
+  .text {
+    text-align: center;
+  }
+}
+
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

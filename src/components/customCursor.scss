@@ -1,0 +1,41 @@
+@import '../scss/gloabals.scss';
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: $c_light;
+  opacity: 0.85;
+  z-index: 5;
+  user-select: none;
+  pointer-events: none;
+}
+.follower1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  background-color: rgba(128, 128, 128, 0.1);
+  border-radius: 50%;
+  z-index: 4;
+  user-select: none;
+  pointer-events: none;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+}
+.follower2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 64px;
+  height: 64px;
+  background-color: black;
+  border-radius: 50%;
+  opacity: 0.15;
+  z-index: 4;
+  user-select: none;
+  pointer-events: none;
+}

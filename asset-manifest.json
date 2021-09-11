@@ -1,16 +1,24 @@
 {
   "files": {
-    "main.css": "/bouncegods/static/css/main.b55d41ba.chunk.css",
-    "main.js": "/bouncegods/static/js/main.c0577302.chunk.js",
-    "runtime-main.js": "/bouncegods/static/js/runtime-main.8032abea.js",
-    "static/js/2.ac80461e.chunk.js": "/bouncegods/static/js/2.ac80461e.chunk.js",
+    "main.css": "/bouncegods/static/css/main.386bfb59.chunk.css",
+    "main.js": "/bouncegods/static/js/main.c56cda44.chunk.js",
+    "runtime-main.js": "/bouncegods/static/js/runtime-main.767ab90a.js",
+    "static/js/2.9b748938.chunk.js": "/bouncegods/static/js/2.9b748938.chunk.js",
+    "static/js/3.e7b0be4c.chunk.js": "/bouncegods/static/js/3.e7b0be4c.chunk.js",
+    "static/css/4.b66f5904.chunk.css": "/bouncegods/static/css/4.b66f5904.chunk.css",
+    "static/js/4.1542e1e6.chunk.js": "/bouncegods/static/js/4.1542e1e6.chunk.js",
+    "static/js/5.d8527354.chunk.js": "/bouncegods/static/js/5.d8527354.chunk.js",
     "index.html": "/bouncegods/index.html",
-    "static/js/2.ac80461e.chunk.js.LICENSE.txt": "/bouncegods/static/js/2.ac80461e.chunk.js.LICENSE.txt"
+    "static/js/2.9b748938.chunk.js.LICENSE.txt": "/bouncegods/static/js/2.9b748938.chunk.js.LICENSE.txt",
+    "static/js/3.e7b0be4c.chunk.js.LICENSE.txt": "/bouncegods/static/js/3.e7b0be4c.chunk.js.LICENSE.txt",
+    "static/media/bvng-pfp.9359fec0.jpg": "/bouncegods/static/media/bvng-pfp.9359fec0.jpg",
+    "static/media/home.scss": "/bouncegods/static/media/dreamy-sky.a06ae19e.jpg",
+    "static/media/sacred-pfp.62338d36.jpg": "/bouncegods/static/media/sacred-pfp.62338d36.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.8032abea.js",
-    "static/js/2.ac80461e.chunk.js",
-    "static/css/main.b55d41ba.chunk.css",
-    "static/js/main.c0577302.chunk.js"
+    "static/js/runtime-main.767ab90a.js",
+    "static/js/3.e7b0be4c.chunk.js",
+    "static/css/main.386bfb59.chunk.css",
+    "static/js/main.c56cda44.chunk.js"
   ]
 }

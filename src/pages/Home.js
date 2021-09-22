@@ -19,8 +19,8 @@ import {
   YoutubeLogo,
 } from '../svg';
 
-import sacred from '../images/sacred-pfp.jpg'
-import bvng from '../images/bvng-pfp.jpg'
+import sacred from '../images/sacred-pfp.jpg';
+import bvng from '../images/bvng-pfp.jpg';
 
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -52,7 +52,7 @@ const Home = () => {
     // 1. Scene
     let tl_scene = gsap.timeline({
       // scrollTrigger: { trigger: q('.logo'), start: 'top bottom' },
-      defaults: { duration: 1, ease: 'Power4.easeOut' },
+      defaults: { duration: 1, ease: 'power4.easeOut' },
     });
     tl_scene
       .from(q('.homepage-scene'), {
@@ -117,25 +117,24 @@ const Home = () => {
           },
         },
         '-=5'
-      )
-      .from(
-        q('.bouncegods-logo'),
-        {
-          opacity: 0,
-        },
-        '-=6.5'
       );
+    gsap.from(q('.bouncegods-logo'), {
+      opacity: 0,
+      duration: 1,
+      delay: 2,
+      ease: 'power4.easeOut',
+    });
     gsap.to(q('.parallax-bg'), {
       scrollTrigger: {
         scrub: 0.5,
       },
       y: (i, target) => `+=${-ScrollTrigger.maxScroll(scroller) * target.dataset.speed}`,
-      ease: 'Power4.Out',
+      ease: 'power4.out',
     });
     // 2. Welcome
     let tl_welcome = gsap.timeline({
       scrollTrigger: { trigger: q('.about'), start: '20% bottom' },
-      defaults: { duration: 2, ease: 'Power4.easeOut' },
+      defaults: { duration: 2, ease: 'power4.easeOut' },
     });
     tl_welcome.from(q('.about .ab_el'), {
       y: '40px',
@@ -150,7 +149,7 @@ const Home = () => {
     // X. Footer
     let tl_footer = gsap.timeline({
       scrollTrigger: { trigger: q('.footer'), start: 'top bottom' },
-      defaults: { duration: 0.5, ease: 'Power4.easeOut' },
+      defaults: { duration: 0.5, ease: 'power4.easeOut' },
     });
     tl_footer
       .from(
@@ -180,7 +179,7 @@ const Home = () => {
     // Y. Copyright
     let tl_copyright = gsap.timeline({
       scrollTrigger: { trigger: q('.copyright'), start: '20% bottom' },
-      defaults: { duration: 0.5, ease: 'Power4.easeOut' },
+      defaults: { duration: 0.5, ease: 'power4.easeOut' },
     });
     tl_copyright.from(q('.cp_el'), {
       opacity: 0,
@@ -188,7 +187,7 @@ const Home = () => {
       stagger: {
         each: 0.25,
         // grid: 'auto',
-        ease: 'power4.Out',
+        ease: 'power4.out',
       },
     });
     //eslint-disable-next-line
@@ -236,8 +235,14 @@ const Home = () => {
         <div className='after'>Owners</div>
       </div>
       <div className='owners'>
-        <UserCard name={'Prod. Sacred'} about={'German Bass Trap and Bounce ex-producer'} src={sacred} />
-        <UserCard name={'Prod. Bvng'} about={'Co Owner of the label, active producer'} src={bvng} />
+        <UserCard
+          name={'Prod. Sacred'}
+          about={`${Math.floor(
+            (new Date() - new Date('2006-11-20').getTime()) / 3.15576e10
+          )} year old multi-genre producer from germany`}
+          src={sacred}
+        />
+        <UserCard name={'Prod. Bvng'} about={'co owner of the label, active producer'} src={bvng} />
       </div>
       <div className='footer'>
         <div className='group left'>
@@ -293,13 +298,13 @@ const Home = () => {
           </a>
           <a className='link' href='https://soundcloud.com/bvngmusic'>
             <div className='icon'>
-            <SoundCloudLogo />
+              <SoundCloudLogo />
             </div>
             bvng
           </a>
           <a className='link' href='https://soundcloud.com/sacred555'>
             <div className='icon'>
-            <SoundCloudLogo />
+              <SoundCloudLogo />
             </div>
             sacred
           </a>
